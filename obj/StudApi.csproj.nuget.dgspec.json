@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Administrator\\Desktop\\DIO\\exercicios\\StudApi\\StudApi.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\DIO\\exercicios\\StudApi\\StudApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Administrator\\Desktop\\DIO\\exercicios\\StudApi\\StudApi.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\DIO\\exercicios\\StudApi\\StudApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Administrator\\Desktop\\DIO\\exercicios\\StudApi\\StudApi.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\DIO\\exercicios\\StudApi\\StudApi.csproj",
         "projectName": "StudApi",
-        "projectPath": "c:\\Users\\Administrator\\Desktop\\DIO\\exercicios\\StudApi\\StudApi.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\DIO\\exercicios\\StudApi\\StudApi.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Administrator\\Desktop\\DIO\\exercicios\\StudApi\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\DIO\\exercicios\\StudApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -46,12 +46,6 @@
               "version": "[6.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.6, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
