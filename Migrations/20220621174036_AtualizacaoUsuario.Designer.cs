@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using StudApi.Data;
@@ -11,9 +12,10 @@ using StudApi.Data;
 namespace StudApi.Migrations
 {
     [DbContext(typeof(StudApiContext))]
-    partial class StudApiContextModelSnapshot : ModelSnapshot
+    [Migration("20220621174036_AtualizacaoUsuario")]
+    partial class AtualizacaoUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,23 +28,20 @@ namespace StudApi.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
+                        .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("data_nascimento");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("nome");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.ToTable("tb_usuario", (string)null);
+                    b.ToTable("Usuarios");
                 });
 #pragma warning restore 612, 618
         }
