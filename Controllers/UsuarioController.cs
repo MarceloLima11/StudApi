@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using StudApi.Models;
+using StudApi.Repository;
 
 namespace StudApi.Controllers;
 
@@ -7,27 +8,24 @@ namespace StudApi.Controllers;
 [Route("api/[Controller]")]
 public class UsuarioController : ControllerBase
 {
-    public static List<Usuario> Usuarios()
+    private readonly IUsuarioRepository _usuarioRepository;
+    public UsuarioController(IUsuarioRepository UsuarioRepository)
     {
-        return new List<Usuario>
-        {
-            new Usuario{Id = 1, Nome = "Marco", DataNascimento = new DateTime(2002, 12, 19)}
-        };
+        _usuarioRepository = UsuarioRepository;
     }
 
     [HttpGet]
     public IActionResult Get()
     {
 
-        return Ok(Usuarios());
+        return Ok();
     }
 
 
     [HttpPost]
-    public IActionResult Post(Usuario usuario)
+    public async Task<IActionResult> Post(Usuario usuario)
     {
-        var usuarios = Usuarios();
-        usuarios.Add(usuario);
-        return Ok(usuarios);
+        _usuarioRepository.Add(usuario);
+        return await _usuarioRepository.SaveChangesAsync() ? Ok("Usuario adicionado com sucesso!") : BadRequest("Erro ao adicionar usuario");
     }
 }

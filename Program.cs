@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StudApi.Data;
+using StudApi.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<StudApiContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("StudConnection"));
 });
+
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
 var app = builder.Build();
 
