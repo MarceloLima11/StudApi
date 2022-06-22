@@ -13,7 +13,7 @@ namespace StudApi.Repository
             _context = context;
         }
 
-        public async Task<Usuario> Get(int id)
+        public async Task<Usuario> GetById(int id)
         {
             return await _context.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
         }

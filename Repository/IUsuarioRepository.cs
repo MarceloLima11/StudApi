@@ -6,7 +6,7 @@ namespace StudApi.Repository
     public interface IUsuarioRepository
     {
 
-        Task<Usuario> Get(int id);
+        Task<Usuario> GetById(int id);
         Task<IEnumerable<Usuario>> GetUsuarios();
         void Update(Usuario newUsuario);
         void Add(Usuario usuario);
