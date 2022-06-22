@@ -1,3 +1,4 @@
+using System.Collections;
 using StudApi.Models;
 
 namespace StudApi.Repository
@@ -7,9 +8,9 @@ namespace StudApi.Repository
 
         Task<Usuario> Get(int id);
         Task<IEnumerable<Usuario>> GetUsuarios();
-        void Update(int idUsuarioAntigo, Usuario newUsuario);
+        void Update(Usuario newUsuario);
         void Add(Usuario usuario);
-        void delete(int id);
+        void Delete(Usuario usuario);
 
         Task<bool> SaveChangesAsync();
     }

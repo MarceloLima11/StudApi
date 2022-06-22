@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using StudApi.Data;
 using StudApi.Models;
 
@@ -12,30 +13,30 @@ namespace StudApi.Repository
             _context = context;
         }
 
-        public Task<Usuario> Get(int id)
+        public async Task<Usuario> Get(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task<IEnumerable<Usuario>> GetUsuarios()
+        public async Task<IEnumerable<Usuario>> GetUsuarios()
         {
-            throw new NotImplementedException();
+            return await _context.Usuarios.ToListAsync();
         }
 
         public void Add(Usuario usuario)
         {
             _context.Add(usuario);
-            _context.SaveChanges();
         }
 
-        public void Update(int idUsuarioAntigo, Usuario newUsuario)
+        public void Update(Usuario attUsuario)
         {
-            throw new NotImplementedException();
+            //var oldUsuario = _context.Usuarios.Where(x => x.Id == newUsuario.Id);
+            _context.Usuarios.Update(attUsuario);
         }
 
-        public void delete(int id)
+        public void Delete(Usuario usuario)
         {
-            throw new NotImplementedException();
+            _context.Usuarios.Remove(usuario);
         }
 
         public async Task<bool> SaveChangesAsync()
